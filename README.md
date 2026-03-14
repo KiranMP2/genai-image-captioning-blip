@@ -89,7 +89,8 @@ demo = gr.Interface(fn=captioner,
 demo.launch(share=True, server_port=int(os.environ['PORT1']))
 ```
 ### OUTPUT:
-
+![NICE](CAT.webp)
+![NICE](Screenshot%202026-03-14%20223742.png)
 ### RESULT:
 The application successfully generates high-quality images based on user-provided text prompts. The Stable Diffusion model ensures visually appealing results, and the Gradio interface makes it accessible and interactive.
 
