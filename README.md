@@ -41,7 +41,6 @@ import base64
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv()) # read local .env file
 hf_api_key = os.environ['HF_API_KEY']
-
 # Helper functions
 import requests, json
 
@@ -59,11 +58,9 @@ def get_completion(inputs, parameters=None, ENDPOINT_URL=os.environ['HF_API_ITT_
                                 headers=headers,
                                 data=json.dumps(data))
     return json.loads(response.content.decode("utf-8"))
-
-image_url = "https://free-images.com/lg/7bab/africa_white_rhinos_rhino.jpg"
+image_url = "https://free-images.com/sm/9596/dog_animal_greyhound_983023.jpg"
 display(IPython.display.Image(url=image_url))
 get_completion(image_url)
-
 import gradio as gr 
 
 def image_to_base64_str(pil_image):
@@ -84,7 +81,7 @@ demo = gr.Interface(fn=captioner,
                     title="Image Captioning with BLIP",
                     description="Caption any image using the BLIP model",
                     allow_flagging="never",
-                    examples=["rhino.jpg", "cow.jpeg", "bird_flight.jpeg"])
+                    examples=["christmas_dog.jpeg", "bird_flight.jpeg", "cow.jpeg"])
 
 demo.launch(share=True, server_port=int(os.environ['PORT1']))
 ```
